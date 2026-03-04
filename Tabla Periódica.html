@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Periódica</title>
+
+  <style>
+    #tabla-periodica{
+      display: grid;
+      grid-template-columns: [c1] 1fr [c2] 1fr [c3] 1fr [c4] 1fr [c5] 1fr [c6] 1fr [c7] 1fr [c8] 1fr [c9] 1fr [c10] 1fr [c11] 1fr [c12] 1fr [c13] 1fr [c14] 1fr [c15] 1fr [c16] 1fr [c17] 1fr [c18]1fr;
+      grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4] 1fr [r5] 1fr [r6] 1fr [r7] 1fr [r8] 1fr [r9] 1fr [r10]1fr;
+      align-items: center;
+      justify-items: center;
+      
+    }
+    #tabla-periodica{
+      counter-reset: elementos;
+    }
+    
+    #tabla-periodica li::before{
+      counter-increment: elementos;
+      content: counter(elementos);
+      vertical-align: sub;
+      margin-right: 2px;
+      font-size: 0.8em;
+      
+    }
+   
+    #tabla-periodica li::after{
+       content:attr(title);
+       display: block;
+       font-size: 0.8em;
+      }
+    #He{
+      grid-column: c18;
+    }
+    #B{
+      grid-column: c13;
+    }
+#Al{
+  grid-column: c13;
+}
+#Ce,#Pr,#Nd,#Pm,#Sm,#Eu,#Gd,#Tb,#Dy,#Ho,#Er,#Tm,#Yb,#Lu{
+  grid-row: r9;
+  background-color: rgb(39, 160, 39);
+}
+#Ce{grid-column: c4}
+#Pr{grid-column: c5}
+#Nd{grid-column: c6}
+#Pm{grid-column: c7}
+#Sm{grid-column: c8}
+#Eu{grid-column: c9}
+#Gd{grid-column: c10}
+#Tb{grid-column: c11}
+#Dy{grid-column: c12}
+#Ho{grid-column: c13}
+#Er{grid-column: c14}
+#Tm{grid-column: c15}
+#Yb{grid-column: c16}
+#Lu{grid-column: c17}
+
+#Th,#Pa,#U,#Np,#Pu,#Am,#Cm,#Bk,#Cf,#Es,#Fm,#Md,#No,#Lr{
+  grid-row: r10;
+  background-color: rgb(153, 255, 153);
+}
+#Th{grid-column: c4}
+#Pa{grid-column: c5}
+#U{grid-column: c6}
+#Np{grid-column: c7}
+#Pu{grid-column: c8}
+#Am{grid-column: c9}
+#Cm{grid-column: c10}
+#Bk{grid-column: c11}
+#Cf{grid-column: c12}
+#Es{grid-column: c13}
+#Fm{grid-column: c14}
+#Md{grid-column: c15;}
+#No{grid-column: c16;}
+#Lr{grid-column: c17;}
+
+#Li,#Na,#K,#Rb,#Cs,#Fr{
+  background-color: salmon;
+}
+#Be,#Mg,#Ca,#Sr,#Ba,#Ra{
+  background-color:burlywood;
+}
+#B,#Si,#Ge,#As,#Sb,#Te,#Po{
+  background-color: lawngreen;
+}
+#H,#C,#N,#O,#P,#S,#Se{
+      color: white;
+      background-color: darkslateblue;
+    }
+#Al,#Ga,#In,#Sn,#Tl,#Pb,#Bi,#Nh,#Fl,#Mc,#Lv{
+  background-color: yellow;
+}
+#F,#Cl,#Br,#I,#At,#Ts{
+  background-color: violet;
+}
+#He,#Ne,#Ar,#Kr,#Xe,#Rn,#Og{
+  background-color: lightblue;
+}
+#Sc,#Ti,#V,#Cr,#Mn,#Fe,#Co,#Ni,#Cu,#Zn,
+#Y,#Zr,#Nb,#Mo,#Tc,#Ru,#Rh,#Pd,#Ag,#Cd,
+#La,#Hf,#Ta,#W,#Re,#Os,#Ir,#Pt,#Au,#Hg,
+#Ac,#Rf,#Db,#Sg,#Bh,#Hs,#Mt,#Ds,#Rg,#Cn{
+  background-color: antiquewhite;
+}
+li{
+  font-size: 20px;
+  height: 60px;
+  width: 80px;
+  text-align: center;
+  margin: 5px;
+  list-style: none;
+}
+  </style>
+</head>
+
+<body>
+  <div>
+    <ol id="tabla-periodica">
+      <li title="Hidrogeno" id="H">H</li>
+      <li title="Helio" id="He">He</li>
+      <li title="Litio" id="Li">Li</li>
+      <li title="Berilio" id="Be">Be</li>
+      <li title="Boro" id="B">B</li>
+      <li title="Carbon" id="C">C</li>
+      <li title="Nitrogeno" id="N">N</li>
+      <li title="Oxigeno" id="O">O</li>
+      <li title="Fluor" id="F">F</li>
+      <li title="Neon" id="Ne">Ne</li>
+      <li title="Sodio" id="Na">Na</li>
+      <li title="Magnesio" id="Mg">Mg</li>
+      <li title="Aluminio" id="Al">Al</li>
+      <li title="Silicio" id="Si">Si</li>
+      <li title="Fosforo" id="P">P</li>
+      <li title="Azufre" id="S">S</li>
+      <li title="Cloro" id="Cl">Cl</li>
+      <li title="Argon" id="Ar">Ar</li>
+      <li title="Potasio" id="K">K</li>
+      <li title="Calcio" id="Ca">Ca</li>
+      <li title="Escandio" id="Sc">Sc</li>
+      <li title="Titanio" id="Ti">Ti</li>
+      <li title="Vanadio" id="V">V</li>
+      <li title="Cromo" id="Cr">Cr</li>
+      <li title="Manganeso" id="Mn">Mn</li>
+      <li title="Hierro" id="Fe">Fe</li>
+      <li title="Cobalto" id="Co">Co</li>
+      <li title="Niquel" id="Ni">Ni</li>
+      <li title="Cobre" id="Cu">Cu</li>
+      <li title="Zinc" id="Zn">Zn</li>
+      <li title="Galio" id="Ga">Ga</li>
+      <li title="Germanio" id="Ge">Ge</li>
+      <li title="Arsenico" id="As">As</li>
+      <li title="Selenio" id="Se">Se</li>
+      <li title="Bromo" id="Br">Br</li>
+      <li title="Kripton" id="Kr">Kr</li>
+      <li title="Rubidio" id="Rb">Rb</li>
+      <li title="Estroncio" id="Sr">Sr</li>
+      <li title="Itrio" id="Y">Y</li>
+      <li title="Zirconio" id="Zr">Zr</li>
+      <li title="Niobio" id="Nb">Nb</li>
+      <li title="Molibdeno" id="Mo">Mo</li>
+      <li title="Tecnecio" id="Tc">Tc</li>
+      <li title="Rutenio" id="Ru">Ru</li>
+      <li title="Rodio" id="Rh">Rh</li>
+      <li title="Paladio" id="Pd">Pd</li>
+      <li title="Plata" id="Ag">Ag</li>
+      <li title="Cadmio" id="Cd">Cd</li>
+      <li title="Indio" id="In">In</li>
+      <li title="Estaño" id="Sn">Sn</li>
+      <li title="Antimonio" id="Sb">Sb</li>
+      <li title="Telurio" id="Te">Te</li>
+      <li title="Yodo" id="I">I</li>
+      <li title="Xenon" id="Xe">Xe</li>
+      <li title="Cesio" id="Cs">Cs</li>
+      <li title="Bario" id="Ba">Ba</li>
+      <li title="Lantano" id="La">La</li>
+      <li title="Cerio" id="Ce">Ce</li>
+      <li title="Praseodimio" id="Pr">Pr</li>
+      <li title="Neodimio" id="Nd">Nd</li>
+      <li title="Promethio" id="Pm">Pm</li>
+      <li title="Samario" id="Sm">Sm</li>
+      <li title="Europio" id="Eu">Eu</li>
+      <li title="Gadolinio" id="Gd">Gd</li>
+      <li title="Terbio" id="Tb">Tb</li>
+      <li title="Disprosio" id="Dy">Dy</li>
+      <li title="Holmio" id="Ho">Ho</li>
+      <li title="Erbio" id="Er">Er</li>
+      <li title="Tulio" id="Tm">Tm</li>
+      <li title="Iterbio" id="Yb">Yb</li>
+      <li title="Lutecio" id="Lu">Lu</li>
+      <li title="Hafnio" id="Hf">Hf</li>
+      <li title="Tantalio" id="Ta">Ta</li>
+      <li title="Wolframio" id="W">W</li>
+      <li title="Renio" id="Re">Re</li>
+      <li title="Osmio" id="Os">Os</li>
+      <li title="Iridio" id="Ir">Ir</li>
+      <li title="Platino" id="Pt">Pt</li>
+      <li title="Oro" id="Au">Au</li>
+      <li title="Mercurio" id="Hg">Hg</li>
+      <li title="Talio" id="Tl">Tl</li>
+      <li title="Plomo" id="Pb">Pb</li>
+      <li title="Bismuto" id="Bi">Bi</li>
+      <li title="Polonio" id="Po">Po</li>
+      <li title="Astato" id="At">At</li>
+      <li title="Radon" id="Rn">Rn</li>
+      <li title="Francio" id="Fr">Fr</li>
+      <li title="Radio" id="Ra">Ra</li>
+      <li title="Actinio" id="Ac">Ac</li>
+      <li title="Torio" id="Th">Th</li>
+      <li title="Protactinio" id="Pa">Pa</li>
+      <li title="Uranio" id="U">U</li>
+      <li title="Neptunio" id="Np">Np</li>
+      <li title="Plutonio" id="Pu">Pu</li>
+      <li title="Americio" id="Am">Am</li>
+      <li title="Curio" id="Cm">Cm</li>
+      <li title="Berkelio" id="Bk">Bk</li>
+      <li title="Californio" id="Cf">Cf</li>
+      <li title="Einstenio" id="Es">Es</li>
+      <li title="Fermio" id="Fm">Fm</li>
+      <li title="Mendelevio" id="Md">Md</li>
+      <li title="Nobelio" id="No">No</li>
+      <li title="Laurencio" id="Lr">Lr</li>
+      <li title="Rutherfordio" id="Rf">Rf</li>
+      <li title="Dubnio" id="Db">Db</li>
+      <li title="Seaborgio" id="Sg">Sg</li>
+      <li title="Bohrio" id="Bh">Bh</li>
+      <li title="Hassio" id="Hs">Hs</li>
+      <li title="Meitnerio" id="Mt">Mt</li>
+      <li title="Darmstatio" id="Ds">Ds</li>
+      <li title="Roentgenio" id="Rg">Rg</li>
+      <li title="Copernicio" id="Cn">Cn</li>
+      <li title="Nihonio" id="Nh">Nh</li>
+      <li title="Flerovio" id="Fl">Fl</li>
+      <li title="Moscovio" id="Mc">Mc</li>
+      <li title="Livermorio" id="Lv">Lv</li>
+      <li title="Teneso" id="Ts">Ts</li>
+      <li title="Oganeson" id="Og">Og</li>
+    </ol>
+  </div>
+
+</body>
+
+</html>
