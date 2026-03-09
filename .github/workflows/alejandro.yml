@@ -1,0 +1,9 @@
+name: Mi Primera Automatizacion
+on: [push] # Se ejecuta cada vez que haces push
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest # Se ejecuta en un servidor virtual de Linux
+    steps:
+      - name: Saludar
+        run: echo "Push realizado correctamente"
