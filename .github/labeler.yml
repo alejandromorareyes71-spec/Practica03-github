@@ -1,0 +1,8 @@
+frontend:
+  - "*.html"
+  - "*.css"
+  - "*.js"
+
+backend:
+  - "*.php"
+  - "*.py"
