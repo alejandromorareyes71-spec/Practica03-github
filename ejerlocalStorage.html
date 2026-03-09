@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" id="nombre">
+        <button type="button" onclick="guardaItem()">Guardar elemento</button>
+    </form>
+    <div id="listado"></div>
+    <script>
+        let lista = [];
+
+        function guardaItem() {
+            let datos = {"nombre": document.getElementById("nombre").value};
+            let lista=[]
+            if (localStorage.getItem('items')!=null){
+                lista=JSON.parse(localStorage.getItem('items'));
+            }
+            lista.push(datos);
+            localStorage.setItem('items', JSON.stringify(lista))
+            muestraItems();
+            document.getElementById('formulario').reset();
+            document.getElementById('nombre').focus();
+        }
+
+        function borraItem(indice) {
+            let lista=JSON.parse(localStorage.getItem('items'));
+            lista.splice(indice, 1);
+            
+            localStorage.setItem('items',JSON.stringify(lista));
+            muestraItems();
+        }
+
+        function muestraItems() {
+            let lista=JSON.parse(localStorage.getItem('items'));
+            let posicionListado = document.getElementById('listado');
+            posicionListado.innerHTML = '';
+            for (let i = 0; i < lista.length; i++) {
+                let nombre = lista[i].nombre;
+                posicionListado.innerHTML += `<p>${nombre} - <a href="#" onclick="borraItem(${i})">Delete</a></p>`;
+            }
+        }
+    </script>
+</body>
+</html>
