@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name='miFormulario'>
+        <select name="provincia" id="provincia" onchange="cargaPoblaciones()">
+            <option value="">Seleccione una Provincia...</option>
+        </select>
+        <select name="poblacion" id="poblacion" onchange="cargarId()">
+            <option value="">Seleccione una población...</option>
+        </select>
+    </form>
+    <div id="cod"></div>
+    <script>
+        let provincias = [];
+        let municipios = [];
+    
+        var httpProvincias = new XMLHttpRequest();
+        httpProvincias.open("GET", "https://raw.githubusercontent.com/IagoLast/pselect/master/data/provincias.json", true);
+        httpProvincias.send();
+        httpProvincias.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                provincias = JSON.parse(this.responseText);
+                provincias.sort((a, b) => a.nm.localeCompare(b.nm));
+                cargaprovincias();
+            }
+        };
+    
+        var httpPoblaciones = new XMLHttpRequest();
+        httpPoblaciones.open("GET", "https://raw.githubusercontent.com/IagoLast/pselect/master/data/municipios.json", true);
+        httpPoblaciones.send();
+        httpPoblaciones.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                municipios = JSON.parse(this.responseText);
+                municipios.sort((a, b) => a.nm.localeCompare(b.nm));
+            }
+        };
+    
+        function cargaprovincias() {
+            let selectProvincia = document.getElementById('provincia');
+            provincias.forEach(prov => {
+                let opcion = document.createElement('option');
+                opcion.value = prov.id;
+                opcion.textContent = prov.nm;
+                selectProvincia.appendChild(opcion);
+            });
+        }
+    
+        function cargaPoblaciones() {
+            let selectPoblacion = document.getElementById('poblacion');
+            selectPoblacion.innerHTML = "";
+            let indice = document.miFormulario.provincia.selectedIndex;
+            let prov = document.miFormulario.provincia[indice].value;
+    
+            let opcionDefault = document.createElement('option');
+            opcionDefault.value = "";
+            opcionDefault.textContent = "--selecciona población--";
+            selectPoblacion.appendChild(opcionDefault);
+    
+            municipios.forEach(mun => {
+                if (mun.id.substr(0, 2) === prov) {
+                    let opcion = document.createElement('option');
+                    opcion.value = mun.id;
+                    opcion.textContent = mun.nm;
+                    selectPoblacion.appendChild(opcion);
+                }
+            });
+        }
+    
+        function cargarId() {
+            let indice = document.miFormulario.poblacion.selectedIndex;
+            let pob = document.miFormulario.poblacion[indice].value;
+            document.getElementById('cod').innerHTML = pob;
+        }
+    
+    
+    </script>
+</body>
+
+</html>
+    
