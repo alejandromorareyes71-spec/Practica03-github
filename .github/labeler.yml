@@ -1,0 +1,12 @@
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.html"
+          - "*.css"
+          - "*.js"
+
+backend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.php"
+          - "*.py"
